@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "dev.autotrader.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"MerchantScreenAccessor",
+		"MultiPlayerGameModeMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

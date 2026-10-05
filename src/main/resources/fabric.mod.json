@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "${mod_id}",
+	"version": "${version}",
+	"name": "AutoTrader",
+	"description": "客户端自动村民交易：按快捷键把当前选中的交易加入自动列表，之后打开村民交易界面即自动交易。一次性批量交易是写死的必备行为（没有开关、没有快捷键，一趟刷到不能再刷）。产物/付款物全部按当前报价现场判断，不硬编码任何物品；产物可整摞丢地上（结果格 + 背包同种产物，全程不碰光标，移动端也能用）或 shift 收进背包。会自动清理卡在付款格里的残留物、并在报价被顶价时关闭重开村民刷新价格（可在设置里开关，仅部分服务器有效）。可配置打开界面时是否调整/平滑漂移视角，以及全部快捷键；设置界面带滚动条。",
+	"authors": [
+		"AutoTrader contributors"
+	],
+	"license": "MIT",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"dev.autotrader.AutoTraderClient"
+		],
+		"modmenu": [
+			"dev.autotrader.integration.AutoTraderModMenuIntegration"
+		]
+	},
+	"mixins": [
+		{
+			"config": "autotrader.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.0",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"modmenu": ">=20.0.0"
+	}
+}
